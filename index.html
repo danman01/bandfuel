@@ -1,0 +1,139 @@
+<!doctype html>
+<head profile="http://www.w3.org/2005/10/profile">
+	<title>BandFuel</title>
+
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<!-- jQuery -->
+	<script src="js/jquery-1.7.1.min.js" type="text/javascript"></script>
+	
+	<!-- api functions -->
+  <script type="text/javascript">
+  $(function(){
+    $("#log-in").click(function(){
+      log_in();
+    })
+    $("#sync").click(function(){
+      sync();
+    })
+  // ex: $.post("test.php", { name: "John", time: "2pm" } );
+   /* 
+    * "access_token": "15a8a7e03452f68ec32f75ea116a9ab8",
+    *  "expires_in": "3599",
+    *  "refresh_token": "e03e017168a68fdbb3eddbdb1d4bdf533967c8e7"
+    */
+  })
+  
+   function log_in() { $.post("https://api.nike.com/nsl/v2.0/user/login?app=fuelband&format=json&client_id=c6dd3191b87ad9f48224e9b40a07c07b&client_secret=0a7ab2101babe5fd", {data: fake_data},
+       function(response) {
+         console.log(response);
+       })
+  }
+  
+   function sync() {
+     // manually got access token from curl
+     // body is simulated response from apigee
+     fake_data='{
+          "type": "all_day",                    
+          "timeZoneId": "America/Chicago",      
+          "startTime": 1331503200000,         
+          "duration": 900000,           
+          "calories": 33,
+          "fuel": 100,
+          "steps": 330,
+          "distance": 0.099,
+          "activeTime": 900,
+          "detail": [{
+              "name": "data",
+              "dataSeries": [{
+                  "objType": "dataStream",
+                  "startTime": 1331503200000,
+                  "intervalType": "time",
+                  "intervalMetric": "1",
+                  "intervalUnit": "min",
+                  "metrics": ["calories", "fuel", "steps", "distance", "activeTime"],
+                  "value": [
+                      [2, 7, 22, 0.0066, 1],
+                      [2, 7, 22, 0.0066, 1],
+                      [2, 7, 22, 0.0066, 1],
+                      [2, 7, 22, 0.0066, 1],
+                      [2, 7, 22, 0.0066, 1],
+                      [2, 7, 22, 0.0066, 1],
+                      [2, 7, 22, 0.0066, 1],
+                      [2, 7, 22, 0.0066, 1],
+                      [2, 7, 22, 0.0066, 1],
+                      [2, 7, 22, 0.0066, 1],
+                      [2, 7, 22, 0.0066, 1],
+                      [2, 7, 22, 0.0066, 1],
+                      [2, 7, 22, 0.0066, 1],
+                      [2, 7, 22, 0.0066, 1],
+                      [2, 7, 22, 0.0066, 1]
+                  ]
+              }]
+          }],
+          "summary": {
+              "lastOffset": 1,
+              "lastTimeStamp": 1,
+              "deviceConfig": [{
+                  "component": {
+                      "id": "a11b22dd-1978-401c-a80b-c66cb1cba708",
+                      "type": "fuelband"
+                  }
+              }]
+          }
+      }'
+
+      $.ajax({
+        url: "https://api.nike.com/v2.0/me/sync?access_token=15a8a7e03452f68ec32f75ea116a9ab8",
+        headers: "appid=FUELBAND",
+        data: fake_data,
+        success: function(response) {
+           console.log(response);
+         }
+      })
+   
+  }
+
+  </script>
+</head>
+
+<body>
+<div id="header">
+  <a href="#" id="log-in">Log in</a>
+  <a href="#" id="sync">Sync</a>
+</div>
+<div id="center-wrapper">
+	<h1>
+		<img src="img/hottest.png">
+		BandFuel
+	</h1>
+
+	<div class="content small">
+		<h2>
+			Which concert did you attend tonight?	
+		</h2>
+
+		<select>
+		  <option>Guns N' Roses @ The Fillmore</option>
+		  <option>Coffee</option>
+		  <option>Tea</option>
+		</select>
+	</div>
+	
+	<div class="content large">
+		<h1>
+			Guns N' Roses 
+			<span>Total Energy: 500</span>
+		</h1>
+		<h2>@ The Fillmore, 3/11/12<h2>
+		<h2>200 attendees with Nike FuelBands</h2>
+	</div>
+
+	<div class="clear"></div>
+</div>
+
+</body>
+</html>
+
+

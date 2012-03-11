@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Bandfuel</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+  <script src="js/jquery-1.7.1.min.js" type="text/javascript"></script>
   <script type="text/javascript">
   $(function(){
     $("#log-in").click(function(){
@@ -16,8 +16,10 @@
     */
   })
   
-   function log_in() { 
-     alert("logging in...");
+   function log_in() { $.post("https://api.nike.com/nsl/v2.0/user/login?app=fuelband&format=json&client_id=c6dd3191b87ad9f48224e9b40a07c07b&client_secret=0a7ab2101babe5fd", {email: "sxsw_1331485407181@nikeqa.com", password: "nike"},
+       function(data) {
+         console.log(data);
+       })
   }
   </script>
 </head>
