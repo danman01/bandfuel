@@ -93,6 +93,57 @@ function sync() {
    ' }'
 */
 /*
+{
+    "type": "all_day",
+    "timeZoneId": "America/Chicago",
+    "startTime": 1331503200000,
+    "duration": 900000,
+    "calories": 33,
+    "fuel": 100,
+    "steps": 330,
+    "distance": 0.099,
+    "activeTime": 900,
+    "detail": [{
+        "name": "data",
+        "dataSeries": [{
+            "objType": "dataStream",
+            "startTime": 1331503200000,
+            "intervalType": "time",
+            "intervalMetric": "1",
+            "intervalUnit": "min",
+            "metrics": ["calories", "fuel", "steps", "distance", "activeTime"],
+            "value": [
+                [2, 7, 22, 0.0066, 1],
+                [2, 7, 22, 0.0066, 1],
+                [2, 7, 22, 0.0066, 1],
+                [2, 7, 22, 0.0066, 1],
+                [2, 7, 22, 0.0066, 1],
+                [2, 7, 22, 0.0066, 1],
+                [2, 7, 22, 0.0066, 1],
+                [2, 7, 22, 0.0066, 1],
+                [2, 7, 22, 0.0066, 1],
+                [2, 7, 22, 0.0066, 1],
+                [2, 7, 22, 0.0066, 1],
+                [2, 7, 22, 0.0066, 1],
+                [2, 7, 22, 0.0066, 1],
+                [2, 7, 22, 0.0066, 1],
+                [2, 7, 22, 0.0066, 1]
+            ]
+        }]
+    }],
+    "summary": {
+        "lastOffset": 1,
+        "lastTimeStamp": 1,
+        "deviceConfig": [{
+            "component": {
+                "id": "a11b22dd-1978-401c-a80b-c66cb1cba708",
+                "type": "fuelband"
+            }
+        }]
+    }
+}
+*/
+/*
 		$.post({
       url: "https://api.nike.com/v2.0/me/sync?access_token=15a8a7e03452f68ec32f75ea116a9ab8",
       headers: "appid=FUELBAND",
