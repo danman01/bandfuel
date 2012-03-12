@@ -5,6 +5,12 @@
 div.clear { clear: both; }
 ul { list-style-type: none }
 
+a
+{
+	text-decoration: none;
+	color: black;
+}
+
 body {
 	background-image:url('../img/bg.jpg');
 	background-attachment:fixed; 

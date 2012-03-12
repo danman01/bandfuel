@@ -19,82 +19,47 @@
 </head>
 
 <body>
+
+<!--
 <div id="header">
   <a href="#" id="log-in">Log in</a>
   <div id="sync-container"><a href="#" id="sync">Sync</a></style>
 </div>
+-->
+
 <div id="center-wrapper">
+	<a name="home">
+
 	<h1 id="logo" class="out">
 		<img src="img/hottest.png">
 		BandFuel
 	</h1>
 
-	<div class="content small">
+	</a>
+
+	<div class="content small" id="selector">
 		<h2>
 			Which concert did you attend tonight?	
 		</h2>
 
-		<select>
-		  <option>Guns N' Roses @ The Fillmore</option>
-		  <option>Coffee</option>
-		  <option>Tea</option>
-		</select>
 	</div>
 	
+	<div id="your-wrapper" style="display: none">
+
 	<h1 class="out">
 		Your Concert
 	</h1>
-	<div class="content large">
-		<div class="event">
-			<div class="info">
-				<h1>Guns N' Roses</h1><br>
-				@ The Fillmore, San Francisco, CA, 3/11/12<br>
-				400 Nike FuelBands
-			</div>
+	<div class="content large" id="your-concert">
+	</div>
 
-			<div class="energies">
-				<span class="energy">Your Energy: 200</span><br>
-				<span class="energy">Total Energy: 500</span>
-			</div>
-
-			<div class="clear"></div>
-		</div>
-
-		<div id="chartdiv" style="height:400px;width:700px;"></div> 
 	</div>
 
 	<h1 class="out">
 		Highest Energy Concerts
 	</h1>
 
-	<div class="content large">
-		<div class="event">
-			<div class="info">
-				<h1>Guns N' Roses</h1><br>
-				@ The Fillmore, San Francisco, CA, 3/11/12<br>
-				400 Nike FuelBands
-			</div>
-
-			<div class="energies">
-				<span class="energy">Avg Energy: 200</span><br>
-				<span class="energy">Total Energy: 500</span>
-			</div>
-			<div class="clear"></div>
-		</div>
-		<div class="event">
-			<div class="info">
-				<h1>Guns N' Roses</h1><br>
-				@ The Fillmore, San Francisco, CA, 3/11/12<br>
-				400 Nike FuelBands
-			</div>
-
-			<div class="energies">
-				<span class="energy">Avg Energy: 200</span><br>
-				<span class="energy">Total Energy: 500</span>
-			</div>
-			<div class="clear"></div>
-		</div>
-	<div class="clear"></div>
+	<div class="content large" id="highest-energy-concerts">
+	</div>
 </div>
 
 </body>

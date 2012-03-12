@@ -1,13 +1,59 @@
-g_concerts = [
+var g_index = 0;
+
+var g_concerts = [
 	{
 		artist: 'Guns N Roses',
 		venue: 'The Fillmore',
 		city: 'San Francisco',
-	}	
+		date: '3/11/12',
+		avg_energy: '912',
+		total_energy: 912 * 412,
+		bands: '412'
+	},	
+	{
+		artist: 'Lady Gaga',
+		venue: 'The Warfield',
+		city: 'San Francisco',
+		date: '3/11/12',
+		avg_energy: '829',
+		total_energy: 913 * 829,
+		bands: '913'
+	},
+	{
+		artist: 'OFWGKTA',
+		venue: 'Slims',
+		city: 'San Francisco',
+		date: '3/11/12',
+		avg_energy: '1013',
+		total_energy: '234 003',
+		bands: '231'
+	},	
 ];
 
+function set_concert(index)
+{
+	$('#your-wrapper').show();
 
-$(document).ready(function(){
+	var concert = g_concerts[index];
+
+	$('#your-concert').html('');
+
+	$('#your-concert').append('' + 
+		'<div class="event">' +
+			'<div class="info">' + 
+				'<h1>' + concert.artist + '</h1><br>' +
+				'@' + concert.venue + ', ' + concert.date + '<br>' +
+				concert.bands + ' Nike FuelBands' +
+			'</div>' +
+			'<div class="energies">' +
+				'<span class="energy">Your Energy: ' + concert.avg_energy + '</span><br>' +
+				'<span class="energy">Total Energy: ' + concert.total_energy + '</span>' +
+			'</div>' +
+			'<div class="clear"></div>' +
+		'</div>' +
+		'<div id="chartdiv" style="height:400px;width:700px;"></div>' +
+	'');
+
 	var plot2 = $.jqplot ('chartdiv', 
 		[[3,7,9,1,5,3,8,2,5]], {
 		/*title: 'Energy Levels',*/
@@ -30,6 +76,46 @@ $(document).ready(function(){
 			}
 		}
 	});
+}
+
+$(document).ready(function(){
+	
+	$('#selector').change(function()
+	{
+//		console.log('hmm: ' + $(this).val());
+		set_concert(0);
+	});
+
+
+	var selectorString = '<select>';
+
+	selectorString += '<option value="nothing">' + g_concerts.length + ' recent concerts in your area</option>';
+		  
+	for (var index in g_concerts)
+	{
+		var concert = g_concerts[index];
+
+		selectorString += '<option value="' + index + '">' + concert['artist'] + ' @ ' + concert['venue'] + '</option>';
+
+		$('#highest-energy-concerts').append('' +
+			'<a href="#name" onClick="set_concert(' + index + ');">' +
+			'<div class="event">' +
+				'<div class="info">' +
+					'<h1>' + concert['artist'] + '</h1><br>' +
+					'@ ' + concert.venue + ', ' + concert.date + '<br>' +
+					concert.bands + ' Nike FuelBands' +
+				'</div>' +
+				'<div class="energies">' +
+					'<span class="energy">Avg Energy: ' + concert.avg_energy + '</span><br>' +
+					'<span class="energy">Total Energy: ' + concert.total_energy + '</span>' +
+				'</div>' +
+				'<div class="clear"></div>' +
+			'</div>' +
+			'</a>' +
+		'');	
+	}
+
+	$('#selector').append(selectorString);
 });
 
 $(function(){
