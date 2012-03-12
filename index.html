@@ -8,6 +8,8 @@
 	<!-- jqPlot -->
 	<script language="javascript" type="text/javascript" src="js/jquery.jqplot.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/jquery.jqplot.min.css" />
+	<script language="javascript" type="text/javascript" src="js/jqplot.canvasTextRenderer.min.js"></script>
+	<script language="javascript" type="text/javascript" src="js/jqplot.canvasAxisLabelRenderer.min.js"></script>
 
 	<!-- BandFuel CSS -->
 	<link rel="stylesheet" type="text/css" href="css/style.css">
@@ -19,7 +21,7 @@
 <body>
 <div id="header">
   <a href="#" id="log-in">Log in</a>
-  <div id="sync-container"><a href="#" id="sync">Sync</a></style>
+  <div id="sync-container"><a href="#" id="sync">Sync</a></style></div>
 </div>
 <div id="center-wrapper">
 	<h1 id="logo" class="out">
@@ -32,7 +34,7 @@
 			Which concert did you attend tonight?	
 		</h2>
 
-		<select>
+		<select id="band-select">
 		  <option>Guns N' Roses @ The Fillmore</option>
 		  <option>Coffee</option>
 		  <option>Tea</option>

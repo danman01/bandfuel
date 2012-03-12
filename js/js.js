@@ -12,11 +12,20 @@ $(document).ready(function(){
 	  for (var i=0; i<10; i+=1){
 	    userPoints.push([i, 2*Math.sin(i-.8)]);
 	  }
+	var avgPoints = [];
+  	for (var i=0; i<10; i+=1){
+     	avgPoints.push([i, 2.5 + Math.pow(i/4, 2)]);
+  	}
+	create_graph(userPoints, avgPoints);
+	
+	// change graph when dropdown changes
+	$("#band-select").change(function(){
+		change_avg_graph();
+		});
+});
 
-	  var avgPoints = [];
-	  for (var i=0; i<10; i+=1){
-	     avgPoints.push([i, 2.5 + Math.pow(i/4, 2)]);
-	  }
+function create_graph(userPoints, avgPoints)
+{
 	var plot2 = $.jqplot ('chartdiv', 
 		[userPoints,avgPoints], {
 		
@@ -50,8 +59,56 @@ $(document).ready(function(){
 		}
 		
 	});
-});
+}
+function change_user_graph()
+{
+	num=Math.random()
+	if (num>.5){
+	var userPoints = [];
+	  for (var i=0; i<10; i+=1){
+	    userPoints.push([i, 2*Math.sin(i-Math.random())]);
+	  }
+	}
+	else {
+		var userPoints = [];
+		  for (var i=0; i<10; i+=1){
+		    userPoints.push([i, 2*Math.cos(i-Math.random())]);
+		  }
+		}
+		
+	// keep avg points the same
+		
+		var avgPoints = [];
+	  for (var i=0; i<10; i+=1){
+	     avgPoints.push([i, 2.5 + Math.pow(i/4, 2)]);
+	  }
+	create_graph(userPoints, avgPoints);
+}
 
+function change_avg_graph(){
+	num=Math.random()
+	if (num>.5){
+		var avgPoints = [];
+	  for (var i=0; i<10; i+=1){
+	     avgPoints.push([i, 2.5 + Math.cos(i/4, 2)]);
+	  }
+	}
+	else {
+		var avgPoints = [];
+	  for (var i=0; i<10; i+=1){
+	     avgPoints.push([i, 3.5 + Math.pow(i/4, 2)]);
+	  }
+	}
+		
+	// keep user points the same
+		
+		var userPoints = [];
+		  for (var i=0; i<10; i+=1){
+		    userPoints.push([i, 2*Math.sin(i-.8)]);
+		  }
+	create_graph(userPoints, avgPoints);
+	
+}
 $(function(){
   $("#log-in").click(function(){
     log_in();
@@ -79,6 +136,8 @@ $("#sync-container").show();
 
 function sync() {
   alert("syncing...");
+	$("#my_data").show();
+ change_user_graph();
  	 // manually got access token from curl
    // body is simulated response from apigee
 /*
