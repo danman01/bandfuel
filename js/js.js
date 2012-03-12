@@ -8,8 +8,28 @@ g_concerts = [
 
 
 $(document).ready(function(){
+	var userPoints = [];
+	  for (var i=0; i<10; i+=1){
+	    userPoints.push([i, 2*Math.sin(i-.8)]);
+	  }
+
+	  var avgPoints = [];
+	  for (var i=0; i<10; i+=1){
+	     avgPoints.push([i, 2.5 + Math.pow(i/4, 2)]);
+	  }
 	var plot2 = $.jqplot ('chartdiv', 
-		[[3,7,9,1,5,3,8,2,5]], {
+		[userPoints,avgPoints], {
+		
+	  series: [
+			{
+				lineWidth:2,
+				markerOptions: { style:'dimaond' }
+			},
+			{
+				lineWidth:2,
+				markerOptions: { style:'circle' }
+			}
+		],
 		/*title: 'Energy Levels',*/
 		axesDefaults: {
 			labelRenderer: $.jqplot.CanvasAxisLabelRenderer
@@ -21,13 +41,14 @@ $(document).ready(function(){
 		},
 		axes: {
 			xaxis: {
-				label: "Energy",
+				label: "Time",
 				pad: 0
 			},
 			yaxis: {
-				label: "Time"
+				label: "Energy"
 			}
 		}
+		
 	});
 });
 
