@@ -1,3 +1,12 @@
+g_concerts = [
+	{
+		artist: 'Guns N Roses',
+		venue: 'The Fillmore',
+		city: 'San Francisco',
+	}	
+];
+
+
 $(document).ready(function(){
 	var plot2 = $.jqplot ('chartdiv', 
 		[[3,7,9,1,5,3,8,2,5]], {

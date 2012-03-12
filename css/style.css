@@ -7,24 +7,29 @@ ul { list-style-type: none }
 
 body {
 	background-image:url('../img/bg.jpg');
+	background-attachment:fixed; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
-
-	font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif; font-weight:300; font-stretch:normal;
+font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif; font-weight:300; font-stretch:normal;
 	font-size: 15px;
 	margin: 20px;
 }
 
-h1
+h1.out
 {
 	color: white;
 	text-shadow: 0 2px black;
-	width: 500px;
+	width: 700px;
 	margin: auto;
 	margin-bottom: 5px;
 	font-size: 40px;
+}
+
+h1#logo
+{
+	width: 500px;
 }
 
 h2
@@ -60,8 +65,49 @@ div.large
 	width: 700px;
 }
 
+div.event 
+{
+	width: 700px;
+	text-align: left;
+	display: block;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid grey;
+
+}
+
+div.info
+{
+	text-align: left;
+	display: inline;
+	float: left;
+}
+
+div.energies
+{
+	display: inline;
+	float: right;
+}
+
+span.energy
+{
+	font-size: 20px;
+	line-height: 1.5;
+	text-align: right;
+	display: block;
+	float: right;
+}
+
+div.content h1
+{
+	display: inline;
+	color: black;
+	text-shadow: 0 1px white;
+}
+
 select
 {
+	border: 1px solid;
 	font-size: 20px;
 }
 
