@@ -3,7 +3,7 @@ $(document).ready(function(){
 		[[3,7,9,1,5,3,8,2,5]], {
 		/*title: 'Energy Levels',*/
 		axesDefaults: {
-			labelRenderer: $.jqplot.CanvasAxisLabelRenderer
+//			labelRenderer: $.jqplot.CanvasAxisLabelRenderer
 		},
 		seriesDefaults: {
 			rendererOptions: {
