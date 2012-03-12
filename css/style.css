@@ -7,6 +7,7 @@ ul { list-style-type: none }
 
 body {
 	background-image:url('../img/bg.jpg');
+	background-attachment:fixed; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -82,9 +83,16 @@ div.info
 	float: left;
 }
 
+div.energies
+{
+	display: inline;
+	float: right;
+}
+
 span.energy
 {
-	font-size: 30px;
+	font-size: 20px;
+	line-height: 1.5;
 	text-align: right;
 	display: block;
 	float: right;
@@ -99,6 +107,7 @@ div.content h1
 
 select
 {
+	border: 1px solid;
 	font-size: 20px;
 }
 
