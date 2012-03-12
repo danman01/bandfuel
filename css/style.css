@@ -1,7 +1,5 @@
 @charset "UTF-8";
 
-
-
 * { margin: 0; padding: 0; border: none; line-height: 1 }
 :focus { outline: 0; }
 div.clear { clear: both; }
@@ -16,6 +14,7 @@ body {
 
 	font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif; font-weight:300; font-stretch:normal;
 	font-size: 15px;
+	margin: 20px;
 }
 
 h1
