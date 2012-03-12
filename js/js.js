@@ -21,11 +21,12 @@ $(document).ready(function(){
 		},
 		axes: {
 			xaxis: {
-				label: "Energy",
-				pad: 0
+				pad: 0,
+				label: "Time",
 			},
 			yaxis: {
-				label: "Time"
+				pad: 0,
+				label: "Energy",
 			}
 		}
 	});
